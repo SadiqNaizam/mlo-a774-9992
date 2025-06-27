@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from "sonner";
+import { useToast } from "@/components/ui/use-toast";
 
 // Custom Components
 import AuthForm from '@/components/AuthForm';
@@ -11,6 +11,7 @@ const SignUpPage: React.FC = () => {
   console.log('SignUpPage loaded');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { toast } = useToast();
 
   const handleSignUp = async (values: any) => {
     setIsLoading(true);
@@ -22,7 +23,8 @@ const SignUpPage: React.FC = () => {
     setIsLoading(false);
     
     // Show a success toast
-    toast.success("Account Created!", {
+    toast({
+      title: "Account Created!",
       description: "You have successfully signed up. Please log in.",
     });
 
