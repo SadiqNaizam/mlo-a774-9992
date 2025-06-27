@@ -9,8 +9,8 @@ const AuthHeader: React.FC = () => {
     <header className="absolute top-0 left-0 right-0 py-4 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <Link to="/" className="flex items-center gap-2 w-fit">
-          <ShieldCheck className="h-7 w-7 text-indigo-600" />
-          <span className="text-xl font-bold tracking-tight text-gray-800">
+          <ShieldCheck className="h-7 w-7 text-primary" />
+          <span className="text-xl font-bold tracking-tight text-foreground">
             SeamlessLogin
           </span>
         </Link>
