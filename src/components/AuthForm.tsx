@@ -127,7 +127,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
                     {isLoginMode && (
                       <Link
                         to="/forgot-password"
-                        className="text-sm font-medium text-blue-600 hover:underline"
+                        className="text-sm font-medium text-primary hover:underline"
                       >
                         Forgot password?
                       </Link>
@@ -178,7 +178,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
       <CardFooter className="justify-center">
         <p className="text-sm text-muted-foreground">
           {footerLinkText}{' '}
-          <Link to={footerLinkTo} className="font-medium text-blue-600 hover:underline">
+          <Link to={footerLinkTo} className="font-medium text-primary hover:underline">
             {isLoginMode ? 'Sign Up' : 'Sign In'}
           </Link>
         </p>
