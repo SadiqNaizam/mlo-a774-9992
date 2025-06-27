@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useToast } from "@/components/ui/use-toast";
+import { toast } from "sonner";
 
 // Custom Components
 import AuthForm from '@/components/AuthForm';
@@ -11,7 +11,6 @@ const SignUpPage: React.FC = () => {
   console.log('SignUpPage loaded');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const { toast } = useToast();
 
   const handleSignUp = async (values: any) => {
     setIsLoading(true);
@@ -23,8 +22,7 @@ const SignUpPage: React.FC = () => {
     setIsLoading(false);
     
     // Show a success toast
-    toast({
-      title: "Account Created!",
+    toast.success("Account Created!", {
       description: "You have successfully signed up. Please log in.",
     });
 
@@ -33,7 +31,7 @@ const SignUpPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-background">
       <AuthHeader />
       <main className="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <AuthForm
